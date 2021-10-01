@@ -23,5 +23,14 @@ namespace PierreTracker.Tests
       string result = newVendor.VendorName;
       Assert.AreEqual(vendorName, result);
     }
+
+    [TestMethod]
+    public void GetVendorDescription_ReturnsVendorDescription_String()
+    {
+      string vendorDescription = "Sells donuts";
+      Vendor newVendor = new Vendor("test", vendorDescription);
+      string result = newVendor.VendorDescription;
+      Assert.AreEqual(vendorDescription, result);
+    }
   }
 }
