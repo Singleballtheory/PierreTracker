@@ -24,5 +24,14 @@ namespace PierreTracker.Tests
       string result = newOrder.OrderTitle;
       Assert.AreEqual(orderTitle, result);
     }
+
+    [TestMethod]
+    public void GetOrderDescription_ReturnsOrderDescription_String()
+    {
+      string orderDescription = "20 loaves of bread at $2 each";
+      Order newOrder = new Order("test", orderDescription, "test", "test");
+      string result = newOrder.OrderDescription;
+      Assert.AreEqual(orderDescription, result);
+    }
   }
 }
