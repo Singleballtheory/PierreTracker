@@ -11,9 +11,17 @@ namespace PierreTracker.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor();
+      Vendor newVendor = new Vendor("test", "test");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
+    // [TestMethod]
+    // public void GetVendorName_ReturnsVendorName_String()
+    // {
+    //   string vendorName = "Gustav";
+    //   Vendor newVendor = new Vendor(vendorName, "test");
+    //   string result = newVendor.VendorName;
+    //   Assert.AreEqual(vendorName, result);
+    // }
   }
 }
