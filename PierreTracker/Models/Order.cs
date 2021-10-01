@@ -21,7 +21,7 @@ namespace PierreTracker.Models
       Id = _instances.Count;
     }
 
-    public static List<Vendor> GetAll()
+    public static List<Order> GetAll()
     {
       return _instances;
     }

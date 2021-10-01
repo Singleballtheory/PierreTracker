@@ -6,7 +6,7 @@ using PierreTracker.Models;
 namespace PierreTracker.Tests
 {
   [TestClass]
-  public class OrderTests : IDosposable
+  public class OrderTests : IDisposable
   {
 
     public void Dispose()
@@ -57,5 +57,22 @@ namespace PierreTracker.Tests
       Assert.AreEqual(orderPrice, result);
     }
 
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      string orderTitle1 = "Bread purchase";
+      string orderTitle2 = "Pastry purchase";
+      string orderDescription1 = "20 loaves of bread at $2 each";
+      string orderDescription2 = "30 pastries at $1 each";
+      string orderDate1 = "October 1, 2021";
+      string orderDate2 = "Last Tuesday";
+      string orderPrice1 = "$40";
+      string orderPrice2 = "$20 and a bag of doritos";
+      Order newOrder1 = new Order(orderTitle1, orderDescription1, orderDate1, orderPrice1);
+      Order newOrder2 = new Order(orderTitle2, orderDescription2, orderDate2, orderPrice2);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
