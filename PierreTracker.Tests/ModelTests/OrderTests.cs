@@ -33,5 +33,23 @@ namespace PierreTracker.Tests
       string result = newOrder.OrderDescription;
       Assert.AreEqual(orderDescription, result);
     }
+
+    [TestMethod]
+    public void GetOrderDate_ReturnsOrderDate_String()
+    {
+      string orderDate = "October 1, 2021";
+      Order newOrder = new Order("test", "test", orderDate, "test");
+      string result = newOrder.OrderDate;
+      Assert.AreEqual(orderDate, result);
+    }
+
+    [TestMethod]
+    public void GetOrderPrice_ReturnsOrderPrice_String()
+    {
+      string orderPrice = "$40";
+      Order newOrder = new Order("test", "test", "test", orderPrice);
+      string result = newOrder.OrderPrice;
+      Assert.AreEqual(orderPrice, result);
+    }
   }
 }
