@@ -6,8 +6,13 @@ using PierreTracker.Models;
 namespace PierreTracker.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDosposable
   {
+
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
 
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
@@ -51,5 +56,6 @@ namespace PierreTracker.Tests
       string result = newOrder.OrderPrice;
       Assert.AreEqual(orderPrice, result);
     }
+
   }
 }
