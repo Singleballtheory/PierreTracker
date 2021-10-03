@@ -1,0 +1,21 @@
+<h1>A quick guide to adding orders</h1>
+<h3>The form below will add orders to the vendor you selected with the following fields:</h3>
+<h3>Name of Order: Create a name for the order. This will act as a header throughout the app.</h3>
+<h3>Additional Details: Add some additional notes for the order. For example, if the order name is "bagels" you might put how many and what kind down here.<br>This may also be a good place to include any order issues that might have occurred or any special deals you might have agreed to.</h3>
+<h3>Order Date: This can be written in any form you choose. "1/11/11", "January 1st, 2011", "The last tuesday in fall" will all work.</h3>
+<h3>Payment for Order: Self-explanatory but again, open to all kinds of input. "$50", "a bag of chips", "One hundred dollars" will all work.</h3>
+<h3>As with the vendor list, press the submit button and the order list for this vendor will begin populating.</h3>
+<form action="/orders" method="post">
+  <label for="orderTitle">Name of Order</label>
+  <input id="orderTitle" name="orderTitle" type="text">
+  <label for="orderDescription">Additional Details</label>
+  <input id="orderDescription" name="orderDescription" type="text">
+  <label for="orderDate">Order Date</label>
+  <input id="orderDate" name="orderDate" type="text">
+  <label for="orderPrice">Payment for Order</label>
+  <input id="orderPrice" name="orderPrice" type="text">
+  <button type="submit">Submit</button>
+</form>
+
+<p><a href="/vendors">RETURN TO VENDOR LIST</a></p>
+<p><a href="/">RETURN TO MAIN PAGE</a></p>

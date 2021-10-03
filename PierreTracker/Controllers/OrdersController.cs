@@ -6,10 +6,11 @@ namespace PierreTracker.Controllers
 {
     public class OrdersController : Controller
     {
-        [HttpGet("/orders")]
-        public ActionResult Index()
+        [HttpGet("/vendors/{vendorId}/orders/new")]
+        public ActionResult New(int vendorId)
         {
-          return View();
+          Vendor vendor = Vendor.Find(vendorId);
+          return View(vendor);
         }
     }
 }

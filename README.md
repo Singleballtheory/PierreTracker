@@ -14,7 +14,8 @@
 
 ## Description
 
-Pierre asked me to make an app for him so he can track each of his vendors and all their respective orders. And so I did.
+Pierre asked me to make an app for him so he can track each of his vendors and all their respective orders.
+And so I did.
 
 ## Setup/Installation Requirements
 
@@ -25,7 +26,7 @@ Pierre asked me to make an app for him so he can track each of his vendors and a
 * Enter in the command line $ _dotnet restore_
 * Enter in the command line $ _dotnet run_
 * If a browser page does not auto-generate,
-  manually enter _http:localhost:5000_ into your web browser
+  manually enter http://localhost:5000 into your web browser
 
 ## Setting Up Tests
 * Note: Follow the setup steps above first
