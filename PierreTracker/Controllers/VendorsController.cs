@@ -28,7 +28,7 @@ namespace PierreTracker.Controllers
     }
 
     [HttpGet("/vendors/{Id}")]
-    public ActionResult Show(int Id)
+    public ActionResult Show(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor selectedVendor = Vendor.Find(id);
