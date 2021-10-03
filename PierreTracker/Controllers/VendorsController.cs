@@ -1,7 +1,7 @@
-using Microsoft.AspNetCore.Mvc;
-using System;
-using PierreTracker.Models;
 using System.Collections.Generic;
+using System;
+using Microsoft.AspNetCore.Mvc;
+using PierreTracker.Models;
 
 namespace PierreTracker.Controllers
 {
@@ -23,7 +23,7 @@ namespace PierreTracker.Controllers
     [HttpPost("/vendors")]
     public ActionResult Create(string vendorName, string vendorDescription)
     {
-      Vendor myVendor = new Vendor(vendorName, vendorDescription);
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
       return RedirectToAction("Index");
     }
 
@@ -39,11 +39,11 @@ namespace PierreTracker.Controllers
     }
 
     [HttpPost("/vendors/{vendorId}/orders")]
-    public ActionResult Create(int vendorId, string orderTitle)
+    public ActionResult Create(int vendorId, string orderTitle, string orderDescription, string orderDate, string orderPrice)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
-      Order newOrder = new Order(orderTitle);
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
       foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);
@@ -52,11 +52,3 @@ namespace PierreTracker.Controllers
     }
   }
 }
-
-
-    // [HttpGet("/vendors/{Id}")]
-    // public ActionResult Show(int Id)
-    // {
-    //   Vendor vendor = Vendor.Find(Id);
-    //   return View(vendor);
-    // }
