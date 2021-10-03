@@ -6,8 +6,9 @@
 <h3>Payment for Order: Self-explanatory but again, open to all kinds of input. "$50", "a bag of chips", "One hundred dollars" will all work.</h3>
 <h3>As with the vendor list, press the submit button and the order list for this vendor will begin populating.</h3>
 <form action="/vendors/@Model.Id/orders" method="post">
+  <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
   <label for="orderTitle">Name of Order</label>
-  <input id="orderTitle" name="orderTitle" type="hidden" value="@Model.Id">
+  <input id="orderTitle" name="orderTitle" type="text">
   <label for="orderDescription">Additional Details</label>
   <input id="orderDescription" name="orderDescription" type="text">
   <label for="orderDate">Order Date</label>
@@ -17,5 +18,5 @@
   <button type="submit">Submit</button>
 </form>
 
-<p><a href="/vendors">RETURN TO VENDOR LIST</a></p>
-<p><a href="/">RETURN TO MAIN PAGE</a></p>
+@* <p><a href="/vendors">RETURN TO VENDOR LIST</a></p>
+<p><a href="/">RETURN TO MAIN PAGE</a></p> *@

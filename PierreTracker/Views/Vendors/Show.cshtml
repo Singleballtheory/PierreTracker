@@ -1,3 +1,28 @@
+@using PierreTracker.Models;
+
+<h1>@Model["vendor"].VendorName</h1>
+<h3>Description: @Model["vendor"].VendorDescription</h3>
+@* <h3>List of orders by @Model.VendorName :</h3> *@
+@* @if (Model.Count == 0)
+{
+  <p>No orders added yet</p>
+} *@
+
+<ul>
+  @foreach (Order order in @Model["orders"])
+  {
+    <li>
+      <a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.OrderTitle</a>
+    </li>
+  }
+</ul>
+
+
+<a href='/vendors/@Model["vendor"].Id/orders/new'>ADD AN ORDER</a>
+<a href="/vendors">RETURN TO VENDOR LIST</a>
+
+
+
 @* @using PierreTracker.Models;
 
 <h1>Test blorblorblor</h1>
@@ -10,26 +35,3 @@
 <a href='/vendors/@Model["vendor"].Id/orders/new'></a> *@
 
 
-
-@using PierreTracker.Models;
-
-<h1>@Model.VendorName</h1>
-<h3>Description: @Model.VendorDescription</h3>
-<h3>List of orders by @Model.VendorName :</h3>
-@if (Model.Count == 0)
-{
-  <p>No orders added yet</p>
-}
-
-<ul>
-  @foreach (Order order in Model)
-  {
-    <li>
-      <a href="/orders/@order.Id">@order.OrderTitle</a>
-    </li>
-  }
-</ul>
-
-
-<a href='/vendors/@Model["vendor"].Id/orders/new'>ADD AN ORDER</a>
-<a href="/vendors">RETURN TO VENDOR LIST</a>

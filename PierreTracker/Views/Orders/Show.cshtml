@@ -1,3 +1,22 @@
+@using PierreTracker.Models;
+
+<h3>@Model["order"].OrderTitle :</h3>
+<h3>Additional Details: @Model["order"].OrderDescription</h3>
+<h3>Order Date: @Model["order"].OrderDate</h3>
+<h3>Payment for Order: @Model["order"].OrderPrice</h3>
+
+
+@* <h1>Test blorblorblor</h1>
+
+<h3>@Model["vendor"].VendorName</h3>
+<h3>@Model["order"].OrderTitle</h3>
+
+
+<a href='/vendors/@Model["vendor"].Id/orders/new'>ADD AN ORDER</a> *@
+@* <a href="/orders/new">ADD AN ORDER</a> *@
+
+
+
 @* @using PierreTracker.Models;
 
 <h1>@Model.VendorName</h1>
@@ -18,17 +37,8 @@
 </ul> *@
 
 
-<a href='/vendors/@Model["vendor"].Id/orders/new'>ADD AN ORDER</a>
+@* <a href='/vendors/@Model["vendor"].Id/orders/new'>ADD AN ORDER</a>
 <a href="/vendors">RETURN TO VENDOR LIST</a>
+ *@
 
-
-@using PierreTracker.Models;
-
-<h1>Test blorblorblor</h1>
-
-<h3>@Model["vendor"].VendorName</h3>
-<h3>@Model["order"].OrderTitle</h3>
-
-
-<a href="/orders/new">ADD AN ORDER</a>
-<a href='/vendors/@Model["vendor"].Id/orders/new'></a>
+@* @using PierreTracker.Models; *@
