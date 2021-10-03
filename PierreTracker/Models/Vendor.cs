@@ -8,7 +8,7 @@ namespace PierreTracker.Models
     public string VendorName { get; set; }
     public string VendorDescription { get; set; }
     public int Id { get; }
-    public List<Vendor> Vendors { get; set; }
+    public List<Order> Orders { get; set; }
 
     public Vendor(string vendorName, string vendorDescription)
     {
