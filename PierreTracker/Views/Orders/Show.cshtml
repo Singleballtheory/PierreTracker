@@ -1,4 +1,4 @@
-@using PierreTracker.Models;
+@* @using PierreTracker.Models;
 
 <h1>@Model.VendorName</h1>
 <h3>Description: @Model.VendorDescription</h3>
@@ -15,6 +15,20 @@
       <a href="/orders/@order.Id">@order.OrderTitle</a>
     </li>
   }
-</ul>
+</ul> *@
+
+
+<a href='/vendors/@Model["vendor"].Id/orders/new'>ADD AN ORDER</a>
+<a href="/vendors">RETURN TO VENDOR LIST</a>
+
+
+@using PierreTracker.Models;
+
+<h1>Test blorblorblor</h1>
+
+<h3>@Model["vendor"].VendorName</h3>
+<h3>@Model["order"].OrderTitle</h3>
+
 
 <a href="/orders/new">ADD AN ORDER</a>
+<a href='/vendors/@Model["vendor"].Id/orders/new'></a>
